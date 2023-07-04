@@ -40,6 +40,7 @@
       $(this).fadeIn(500);
     });
   };
+  // lightbox apparement c'est pour la modal quand tu clique sur l'image
   $.fn.mauGallery.defaults = {
     columns: 3,
     lightBox: true,
@@ -66,6 +67,7 @@
     );
   };
   $.fn.mauGallery.methods = {
+    //don't know 
     createRowWrapper(element) {
       if (
         !element
@@ -77,6 +79,7 @@
       }
     },
     wrapItemInColumn(element, columns) {
+    // semble possitionner les images de la gallery en donnant à TOUTES les div des images toutes les colones classes
       if (columns.constructor === Number) {
         element.wrap(
           `<div class='item-column mb-4 col-${Math.ceil(12 / columns)}'></div>`
@@ -158,6 +161,7 @@
         imagesCollection[imagesCollection.length - 1];
       $(".lightboxImage").attr("src", $(next).attr("src"));
     },
+
     nextImage() {
       let activeImage = null;
       $("img.gallery-item").each(function() {
@@ -195,6 +199,7 @@
       next = imagesCollection[index] || imagesCollection[0];
       $(".lightboxImage").attr("src", $(next).attr("src"));
     },
+    //check ce que c'est encore du lightbox
     createLightBox(gallery, lightboxId, navigation) {
       gallery.append(`<div class="modal fade" id="${
         lightboxId ? lightboxId : "galleryLightbox"
@@ -235,6 +240,7 @@
         console.error(`Unknown tags position: ${position}`);
       }
     },
+    // ici c'est pour les filtres j'ai rajouter un active quand tu clique sur un bouton pour l'effet visuel)
     filterByTag() {
       if ($(this).hasClass("active-tag")) {
         return;
