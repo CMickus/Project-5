@@ -67,7 +67,6 @@
     );
   };
   $.fn.mauGallery.methods = {
-    //don't know 
     createRowWrapper(element) {
       if (
         !element
@@ -122,6 +121,8 @@
         .attr("src", element.attr("src"));
       $(`#${lightboxId}`).modal("toggle");
     },
+
+    // la correction pour switch d'une image à l'autre se fait ici
     prevImage() {
       let activeImage = null;
       $("img.gallery-item").each(function() {
@@ -223,6 +224,7 @@
                 </div>
             </div>`);
     },
+
     showItemTags(gallery, position, tags) {
       var tagItems =
         '<li class="nav-item"><span class="nav-link active active-tag"  data-images-toggle="all">Tous</span></li>';
