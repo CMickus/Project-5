@@ -7,8 +7,12 @@ body {
 	font-style: normal;
 }
 
-.cursorhover:hover{
+.cursorhoverzoom:hover{
 	cursor: zoom-in;
+}
+
+.cursorhoverpointer:hover{
+	cursor: pointer;
 }
 
 .top-header {
