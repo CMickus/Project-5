@@ -124,6 +124,7 @@
 
     // la correction pour switch d'une image à l'autre se fait ici
     prevImage() {
+      debugger;
       let activeImage = null;
       $("img.gallery-item").each(function() {
         if ($(this).attr("src") === $(".lightboxImage").attr("src")) {
@@ -164,6 +165,7 @@
     },
 
     nextImage() {
+      debugger;
       let activeImage = null;
       $("img.gallery-item").each(function() {
         if ($(this).attr("src") === $(".lightboxImage").attr("src")) {
