@@ -7,6 +7,11 @@ body {
 	font-style: normal;
 }
 
+img{
+	width: 100%;
+	height: auto;
+}
+
 .cursorhoverzoom:hover{
 	cursor: zoom-in;
 }
@@ -92,6 +97,7 @@ body {
 	font-family: 'Spectral';
 	font-weight: 800;
 	font-style: italic;
+	font-size: 1rem;
 	width: 60%;
 }
 #about-me p {
