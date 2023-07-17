@@ -127,6 +127,7 @@
       debugger;
       let activeImage = null;
       $("img.gallery-item").each(function() {
+        debugger
         if ($(this).attr("src") === $(".lightboxImage").attr("src")) {
           activeImage = $(this);
         }
@@ -155,12 +156,17 @@
 
       $(imagesCollection).each(function(i) {
         if ($(activeImage).attr("src") === $(this).attr("src")) {
-          index = i ;
+          index = i;
+          console.log(index)
+          debugger
         }
-      });
+      });        
+      console.log(imagesCollection[index])
+      console.log(imagesCollection[imagesCollection.length - 1])
       next =
         imagesCollection[index] ||
         imagesCollection[imagesCollection.length - 1];
+        console.log(next)
       $(".lightboxImage").attr("src", $(next).attr("src"));
     },
 
