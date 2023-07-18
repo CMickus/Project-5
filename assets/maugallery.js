@@ -124,10 +124,8 @@
 
     // la correction pour switch d'une image à l'autre se fait ici
     prevImage() {
-      debugger;
       let activeImage = null;
       $("img.gallery-item").each(function() {
-        debugger
         if ($(this).attr("src") === $(".lightboxImage").attr("src")) {
           activeImage = $(this);
         }
@@ -157,21 +155,15 @@
       $(imagesCollection).each(function(i) {
         if ($(activeImage).attr("src") === $(this).attr("src")) {
           index = i;
-          console.log(index)
-          debugger
         }
       });        
-      console.log(imagesCollection[index])
-      console.log(imagesCollection[imagesCollection.length - 1])
       next =
-        imagesCollection[index] ||
+        imagesCollection[index-1] ||
         imagesCollection[imagesCollection.length - 1];
-        console.log(next)
       $(".lightboxImage").attr("src", $(next).attr("src"));
     },
 
     nextImage() {
-      debugger;
       let activeImage = null;
       $("img.gallery-item").each(function() {
         if ($(this).attr("src") === $(".lightboxImage").attr("src")) {
@@ -205,7 +197,7 @@
           index = i;
         }
       });
-      next = imagesCollection[index] || imagesCollection[0];
+      next = imagesCollection[index+1] || imagesCollection[0];
       $(".lightboxImage").attr("src", $(next).attr("src"));
     },
     //check ce que c'est encore du lightbox
