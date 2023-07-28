@@ -119,6 +119,7 @@
         .attr("src", element.attr("src"));
       $(`#${lightboxId}`).modal("toggle");
     },
+    //bug d'index on reste sur la meme image or il faut un -1 pour la precedante
     prevImage() {
       let activeImage = null;
       $("img.gallery-item").each(function() {
@@ -158,6 +159,7 @@
         imagesCollection[imagesCollection.length - 1];
       $(".lightboxImage").attr("src", $(next).attr("src"));
     },
+    //bug d'index comme au dessus
     nextImage() {
       let activeImage = null;
       $("img.gallery-item").each(function() {
@@ -235,6 +237,7 @@
         console.error(`Unknown tags position: ${position}`);
       }
     },
+    //ici ajout de la class active des tag cliqué pour le style
     filterByTag() {
       if ($(this).hasClass("active-tag")) {
         return;
